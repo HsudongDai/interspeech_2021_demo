@@ -1,44 +1,48 @@
 <html>
 
 <head>
-
+    <link rel="shortcut icon" href="mic.svg">
     <style>
         h1 {
             font-family: 'Open Sans', sans-serif;
-            font-size: 30px;
+            font-size: 24px;
             line-height: 250%;
             font-weight: 500;
             text-rendering: optimizeLegibility;
         }
 
         h2 {
+            font-size: 18px;
             font-family: 'Open Sans', sans-serif;
             letter-spacing: 1px;
-            letter-spacing: -0.015em;
             font-weight: 300;
             line-height: 150%;
             text-rendering: optimizeLegibility;
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
             font: normal 12px/150% Arial, Helvetica, sans-serif;
             background: #fff;
         }
 
-        table,
+        table {
+            width: 95%;
+            border-collapse: collapse;
+        }
+
         td {
             border: 1px solid black;
-            border-collapse: collapse;
+            border-collapse: inherit;
             padding: 2px 2px;
             text-align: center;
+            word-wrap: break-word;
+            width: 8%;
         }
 
         th {
             padding: 3px 10px;
             font-family: 'Open Sans', sans-serif;
             font-weight: 100;
-            background-color: #DADADA;
             color: #000000;
             font-size: 15px;
             border-left: 1px solid black;
@@ -59,9 +63,9 @@
         }
 
         div {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Century', sans-serif;
             font-weight: 100;
-            font-size: 15px;
+            font-size: 14px;
             line-height: 24px;
         }
 
@@ -75,25 +79,24 @@
     </style>
 
     <meta charset="UTF-8">
-    <title>Audio samples from "INFORMATION SIEVE: MITIGATING CONTENT LEAKAGE IN END-TO-END PROSODY TRANSFER FOR
-        EXPRESSIVE
-        SPEECH SYNTHESIS"</title>
+    <title>Audio samples for Interspeech 2021"</title>
 </head>
 
 <body>
 <article>
     <header>
-        <h1>Audio samples from "INFORMATION SIEVE: MITIGATING LEAKAGE IN END-TO-END PROSODY TRANSFER FOR EXPRESSIVE
-            SPEECH
-            SYNTHESIS"</h1>
+        <h2 align="center">Audio Samples from</h2><br>
+        <h1 align="center">"INFORMATION SIEVE: CONTENT LEAKAGE REDUCTION IN END-TO-END PROSODY TRANSFER FOR EXPRESSIVE
+            SPEECH SYNTHESIS"</h1>
     </header>
 </article>
 <!-- <br> -->
 <!-- <div style="font-size: 20px;"><b>Paper:</b> <a href="https://arxiv.org/">arXiv</a> </div> -->
 <br>
-<div style="font-size: 20px;"><b>Authors:</b>Xudong Dai, Cheng Gong, Longbiao Wang, Kaili Zhang</div>
+<div style="font-size: 20px;" align="center"><b>Authors:</b>Xudong Dai, Cheng Gong, Longbiao Wang, Kaili Zhang</div>
 <br>
-<div style="font-size: 20px; width: 1200px;"><b>Abstract:</b>
+<div style="font-size: 18px; width: auto">
+    <span style="font-weight: bold">Abstract: </span>
     Expressive neural text-to-speech (TTS) systems incorporate a style encoder to learn a latent embedding as the style
     information. However, this embedding process may encode redundant textual information. This phenomenon is called
     content leakage. Researchers have attempted to resolve this problem by adding an ASR or other auxiliary supervision
@@ -109,274 +112,96 @@
 </div>
 
 <br>
-<!--
-  <br>
-  <div style="font-size: 18px"><h2>The following samples demonstrate the prosody control capability by adjusting bias of each prosodic dimension.</div>
-  <br>
 
-  <div><h2>Baseline: -</div>
-
-  <table>
-    <thead>
-      <tr>
-        <th>[No control]</th><th style="background-color: #f2f2f2;">-</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <th style="background-color: #f2f2f2;">-</th>
-        <td><audio controls=""><source src="audio/syn_baseline/syn_137.wav" type="audio/wav"></audio></td>
-      </tr>
-    </tbody>
-  </table>
-    <h3>Definition (same as defined in  our submitted paper)</h3>
-
-  <br>
-  <br>
-  -->
 <div>
-    <h3>Definition (same as defined in our submitted paper)</h3>
+    <h2 style="font-weight: bold">Definition (same as defined in our submitted paper)</h2>
     <strong>Ground Truth</strong>: Records directly selected from testset in Blizzard Challenge 2013<br>
     <strong>Original GST-Tacotron</strong>: Original Tacotron model combined with Global Style Tokens.<br>
-    <strong>Sieve GST</strong>: GST Tacptron
-    <strong>S-I-G model</strong>: Our proposed model with Information Sieve and Instance Normalization on Style
-    Encoder.<br>
+    <strong>Sieve GST</strong>: GST Tacotron style encoder combined with an Information Sieve layer.<br>
+    <strong>I-G</strong>: Replace batch normalization used in convolutional layers of style encoder with instance
+    normalization.<br>
+    <strong>S-I-G model</strong>: Our proposed model with Information Sieve and Instance Normalization in our style
+    encoder.<br>
 </div>
 
-<div>
-    <h2>Text: 昨日这名伤者与<b>医生</b>全部被警方依法刑事拘留</h2>。
-</div>
 <p class="sample">
-    1.The masters must look to that, we can't.
+    1.This is not the first time, but it shall be the last.
+</p>
 <blockquote>
-    <table>
+    <table style="table-layout: auto">
         <tr>
-            <td align=center width=300>With GST (using target reference)</td>
-            <td align=center width=300>target reference audio</td>
-            <td align=center width=300>With GST (using random reference)</td>
-            <td align=center width=300>random reference audio</td>
+            <td>Ground Truth Record & Target Reference Audio</td>
+            <td>Original GST (using target reference)</td>
+            <td>Sieve GST (using target reference)</td>
+            <td>I-G (using target reference)</td>
+            <td>S-I-G (using target reference)</td>
+            <!-- A halving line for counting -->
+            <td>Ground Truth random reference audio</td>
+            <td>Original GST (using random reference)</td>
+            <td>Sieve GST (using random reference)</td>
+            <td>I-G (using random reference)</td>
+            <td>S-I-G (using random reference)</td>
         </tr>
         <tr>
             <td rowspan=2>
-                <audio src="style-samples/samples-with-target/CA-BB-39-27/eval-220000_ref-CA-BB-39-27.wav"
-                       controls=""></audio>
+                <audio src="sentence1/CA-BB-01-39.wav" controls preload="metadata"></audio>
             </td>
             <td rowspan=2>
-                <audio src="style-samples/samples-with-target/CA-BB-39-27/CA-BB-39-27.wav" controls=""></audio>
+                <audio src="sentence1/origin-eval-188000_CA-BB-01-39_ref-mel.wav" controls preload="metadata"></audio>
+            </td>
+            <td rowspan=2>
+                <audio src="sentence1/batch-eval-188000_CA-BB-01-39_ref-mel.wav" controls preload="metadata"></audio>
+            </td>
+            <td rowspan=2>
+                <audio src="sentence1/instance-eval-188000_CA-BB-01-39_ref-self.wav" controls
+                       preload="metadata"></audio>
+            </td>
+            <td rowspan=2>
+                <audio src="sentence1/eval-188000_CA-BB-01-39_CA-MP1-13-049.wav" controls preload="metadata"></audio>
             </td>
             <td>
-                <audio src="style-samples/samples-with-target/CA-BB-39-27/eval-220000_ref-CA-MP1-03-101.wav"
-                       controls=""></audio>
+                <audio src="sentence1/CA-MP1-13-049.wav" controls preload="metadata"></audio>
             </td>
             <td>
-                <audio src="style-samples/samples-with-target/CA-BB-39-27/CA-MP1-03-101.wav" controls=""></audio>
-                <br></td>
+                <audio src="sentence1/origin-eval-188000_CA-BB-01-39_ref-CA-MP1-13-049.wav" controls
+                       preload="metadata"></audio>
+            </td>
+            <td>
+                <audio src="sentence1/batch-eval-188000_CA-BB-01-39_ref-CA-MP1-13-049.wav" controls
+                       preload="metadata"></audio>
+            </td>
+            <td>
+                <audio src="sentence1/instance-eval-188000_CA-BB-01-39_ref-CA-MP1-13-049.wav" controls
+                       preload="metadata"></audio>
+            </td>
+            <td>
+                <audio src="sentence1/eval-188000_CA-BB-01-39_CA-MP1-13-049.wav" controls preload="metadata"></audio>
+            </td>
         </tr>
         <tr>
             <td>
-                <audio src="style-samples/samples-with-target/CA-BB-39-27/eval-220000_ref-CA-MP1-05-020.wav"
-                       controls=""></audio>
+                <audio src="sentence1/CA-MP3-17-131.wav" controls preload="metadata"></audio>
             </td>
             <td>
-                <audio src="style-samples/samples-with-target/CA-BB-39-27/CA-MP1-05-020.wav" controls=""></audio>
-                <br></td>
+                <audio src="sentence1/origin-eval-188000_CA-BB-01-39_ref-CA-MP3-17-131.wav" controls
+                       preload="metadata"></audio>
+            </td>
+            <td>
+                <audio src="sentence1/batch-eval-188000_CA-BB-01-39_ref-CA-MP3-17-131.wav" controls
+                       preload="metadata"></audio>
+            </td>
+            <td>
+                <audio src="sentence1/instance-eval-188000_CA-BB-01-39_ref-CA-MP3-17-131.wav" controls
+                       preload="metadata"></audio>
+            </td>
+            <td>
+                <audio src="sentence1/eval-188000_CA-BB-01-39_CA-MP3-17-131.wav" controls preload="metadata"></audio>
+            </td>
         </tr>
     </table>
 </blockquote>
-</p>
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Method</th>
-      <th style="background-color: #b3d1ff;">1.4</th>
-      <th style="background-color: #e6f0ff;">1.2</th>
-      <th style="background-color: #ffffff;">1.0</th>
-      <th style="background-color: #ffebe6;">0.8</th>
-      <th style="background-color: #ffc2b3;">0.6</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th style="background-color: #f2f2f2;">Ground truth</th>
-      <td> - </td>
-      <td> - </td>
-      <td><audio controls="">
-          <source src="audio1/text1_GT.wav" type="audio/wav">
-        </audio></td>
-      <td> - </td>
-      <td> - </td>
-    </tr>
-    <tr>
-      <th style="background-color: #f2f2f2;">Baseline</th>
-      <td><audio controls="">
-          <source src="audio1/text1_bs_1.4.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_bs_1.2.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_bs_1.0.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_bs_0.8.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_bs_0.6.wav" type="audio/wav">
-        </audio></td>
-    </tr>
-    <tr>
-      <th style="background-color: #f2f2f2;">Proposed_NoVQ</th>
-      <td><audio controls="">
-          <source src="audio1/text1_NO_1.4.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_NO_1.2.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_NO_1.0.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_NO_0.8.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_NO_0.6.wav" type="audio/wav">
-        </audio></td>
-    </tr>
-    <tr>
-      <th style="background-color: #f2f2f2;">Proposed_VQ</th>
-      <td><audio controls="">
-          <source src="audio1/text1_VQ_1.4.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_VQ_1.2.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_VQ_1.0.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_VQ_0.8.wav" type="audio/wav">
-        </audio></td>
-      <td><audio controls="">
-          <source src="audio1/text1_VQ_0.6.wav" type="audio/wav">
-        </audio></td>
-    </tr>
-  </tbody>
-</table> -->
+
 <br>
-<div>
-    <h2>Text: 她见我一进门就骂，<b>吃饭</b>时也骂，骂得我抬不起头</h2>。
-</div>
-<table>
-    <thead>
-    <tr>
-        <th>Method</th>
-        <th style="background-color: #b3d1ff;">1.4</th>
-        <th style="background-color: #e6f0ff;">1.2</th>
-        <th style="background-color: #ffffff;">1.0</th>
-        <th style="background-color: #ffebe6;">0.8</th>
-        <th style="background-color: #ffc2b3;">0.6</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th style="background-color: #f2f2f2;">Ground truth</th>
-        <td> -</td>
-        <td> -</td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_GT.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td> -</td>
-        <td> -</td>
-    </tr>
-    <tr>
-        <th style="background-color: #f2f2f2;">Baseline</th>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_bs_1.4.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_bs_1.2.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_bs_1.0.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_bs_0.8.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_bs_0.6.wav" type="audio/wav">
-            </audio>
-        </td>
-    </tr>
-    <tr>
-        <th style="background-color: #f2f2f2;">Proposed_NoVQ</th>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_NO_1.4.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_NO_1.2.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_NO_1.0.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_NO_0.8.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_NO_0.6.wav" type="audio/wav">
-            </audio>
-        </td>
-    </tr>
-    <tr>
-        <th style="background-color: #f2f2f2;">Proposed_VQ</th>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_VQ_1.4.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_VQ_1.2.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_VQ_1.0.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_VQ_0.8.wav" type="audio/wav">
-            </audio>
-        </td>
-        <td>
-            <audio controls="">
-                <source src="audio2/text2_VQ_0.6.wav" type="audio/wav">
-            </audio>
-        </td>
-    </tr>
-    </tbody>
-</table>
 <br>
 <br>
 </body>
